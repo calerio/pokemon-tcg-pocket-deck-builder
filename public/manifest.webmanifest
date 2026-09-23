@@ -1,0 +1,14 @@
+{
+  "name": "Pocket Deck Lab: Pokémon TCG Pocket Deck Builder & QR",
+  "short_name": "Deck Lab",
+  "description": "Build a Pokémon TCG Pocket deck and get a QR code the game can scan.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#2f5bea",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

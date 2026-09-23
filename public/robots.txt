@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calerio.github.io/pokemon-tcg-pocket-deck-builder/sitemap.xml

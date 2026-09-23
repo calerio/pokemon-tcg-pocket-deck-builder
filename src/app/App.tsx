@@ -100,7 +100,14 @@ export function App() {
           {menuOpen && catalog && (
             <MenuPopover onClose={() => setMenuOpen(false)}>
               <button type="button" role="menuitem" onClick={() => importRef.current?.showModal()}>Import deck (QR, code or list)…</button>
-              <button type="button" role="menuitem" disabled={!store.deck.cards.length} onClick={async () => { await navigator.clipboard?.writeText(exportText(store.deck, catalog)); }}>Copy decklist as text</button>
+              <button type="button" role="menuitem" disabled={!store.deck.cards.length} onClick={async () => {
+                try {
+                  await navigator.clipboard.writeText(exportText(store.deck, catalog));
+                  store.notify("Decklist copied");
+                } catch {
+                  store.notify("Couldn't copy. Your browser blocked the clipboard.");
+                }
+              }}>Copy decklist as text</button>
               <button type="button" role="menuitem" disabled={!store.deck.cards.length} onClick={() => download(new Blob([exportJson(store.deck, catalog)], { type: "application/json" }), `${store.deck.name || "deck"}.json`)}>Download deck as JSON</button>
               <hr />
               <button type="button" role="menuitem" onClick={loadSample}>Load a sample deck</button>

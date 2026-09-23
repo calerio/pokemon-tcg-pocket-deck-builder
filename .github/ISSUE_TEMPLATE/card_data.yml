@@ -1,0 +1,12 @@
+name: Card data error
+description: A card is missing, or has a wrong name, HP, text or image
+labels: [card-data]
+body:
+  - type: input
+    id: card
+    attributes: { label: Card number, placeholder: "e.g. B3-081" }
+    validations: { required: true }
+  - type: textarea
+    id: wrong
+    attributes: { label: What's wrong?, description: "What the app shows vs. what the card actually says (a link to the card helps)." }
+    validations: { required: true }

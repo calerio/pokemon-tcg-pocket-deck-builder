@@ -1,0 +1,14 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes: { label: What happened?, description: What did you do, what did you expect, and what happened instead? }
+    validations: { required: true }
+  - type: input
+    id: device
+    attributes: { label: Device and browser, placeholder: "e.g. iPhone 15, Safari 26" }
+  - type: textarea
+    id: deck
+    attributes: { label: Deck code or share link (optional), description: "From Generate QR → Deck code (technical). It contains no personal data." }

@@ -1,0 +1,38 @@
+name: Card data sync
+
+# Checks for a newer flibustier card database weekly and opens a PR with the regenerated snapshot.
+# It never deploys: a human reviews the diff (new sets, changed entity IDs) and merges.
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Update the pinned card database to the latest release
+        run: npm install --save-dev --save-exact pokemon-tcg-pocket-database@latest
+      - name: Rebuild the snapshot (fails loudly on ambiguity or regressions)
+        run: npm run sync-data
+      - run: npm test
+      - uses: peter-evans/create-pull-request@v6
+        with:
+          branch: data/sync
+          title: "Card data: sync with pokemon-tcg-pocket-database"
+          commit-message: "Card data: sync with pokemon-tcg-pocket-database"
+          body: |
+            Automated weekly sync. Review before merging:
+            - new sets or prints in `public/data/meta.json` counts
+            - any new entries needed in `data/known-gaps.json` (new sets often lack gameplay data at first)
+            - `data/upstream/gameplay.json` is NOT refreshed automatically; see docs/data-sources.md
