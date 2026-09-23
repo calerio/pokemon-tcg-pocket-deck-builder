@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-23T09:57:57.498Z",
+  "counts": {
+    "sets": 23,
+    "entities": 2318,
+    "prints": 3879,
+    "partialEntities": 5
+  },
+  "sources": [
+    {
+      "name": "flibustier/pokemon-tcg-pocket-database",
+      "url": "https://github.com/flibustier/pokemon-tcg-pocket-database",
+      "licence": "MIT",
+      "version": "2.10.0",
+      "sha256": "a337cd3d2a2774871caa1de8d06fc64b3d03185ab5332917460f9a31dfea16d9",
+      "note": "identity, entity IDs, sets, packs, rarities"
+    },
+    {
+      "name": "TCGdex",
+      "url": "https://tcgdex.dev",
+      "licence": "MIT",
+      "note": "gameplay fields for sets it covers"
+    },
+    {
+      "name": "Limitless TCG Pocket card database",
+      "url": "https://pocket.limitlesstcg.com/cards",
+      "licence": "none published",
+      "note": "gameplay fields for sets TCGdex lacks (see docs/data-sources.md)"
+    },
+    {
+      "name": "data/upstream/gameplay.json",
+      "url": "data/upstream/gameplay.json",
+      "licence": "see above",
+      "sha256": "5e02948a2ac4154f2edcb02d6e4f05edac756bc151f1fda549b560422f1c8999"
+    }
+  ],
+  "images": {
+    "tcgdex": "https://assets.tcgdex.net/en/tcgp",
+    "exchange": "https://cdn.jsdelivr.net/gh/flibustier/pokemon-tcg-exchange@613d6a038e4a68c7014af2d4538c1f6a9ebe8d8b/public/images/cards-by-set",
+    "exchangeCommit": "613d6a038e4a68c7014af2d4538c1f6a9ebe8d8b"
+  },
+  "transforms": [
+    "set codes PROMO-A/PROMO-B aliased to P-A/P-B; collector numbers zero-padded to 3 digits",
+    "entity ID parsed from the flibustier image name (cPK_/cTR_ prefix → kind)",
+    "prints grouped by entity; gameplay taken from the lowest-rarity print; names/HP/stage must agree across prints",
+    "5 reviewed overrides applied (data/overrides.json)",
+    "text normalised: NFKC, straight apostrophes, 'Stage 1' spelling"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "_doc": "Reviewed corrections to data/upstream/gameplay.json. Each needs evidence. sync-data fails if an override no longer changes anything (upstream fixed it) so stale entries get removed.",
+  "cards": {
+    "B2a-126": { "set": { "name": "Entei ex", "suffix": "EX" }, "evidence": "Limitless B2a/126 title 'Entei ex'; same entity 10210 as A4a-010 Entei ex, same HP 140 (checked 2026-09-23)" },
+    "B2a-127": { "set": { "name": "Suicune ex", "suffix": "EX" }, "evidence": "Limitless B2a/127 'Suicune ex'; entity 10400 = A4a-020 (checked 2026-09-23)" },
+    "B2a-128": { "set": { "name": "Raikou ex", "suffix": "EX" }, "evidence": "Limitless B2a/128 'Raikou ex'; entity 10440 = A4a-025 (checked 2026-09-23)" },
+    "B2a-129": { "set": { "name": "Tinkaton ex", "suffix": "EX" }, "evidence": "Limitless B2a/129 'Tinkaton ex'; entity 5690 = A2b-054 (checked 2026-09-23)" },
+    "B2a-130": { "set": { "hp": 140 }, "evidence": "TCGdex says 170; Limitless B2a/130 and the base print B2a-036 (same entity 15450) say 140 HP (checked 2026-09-23)" }
+  }
+}

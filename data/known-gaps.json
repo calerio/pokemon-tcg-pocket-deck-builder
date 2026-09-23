@@ -1,0 +1,4 @@
+{
+  "_doc": "Prints that exist in the flibustier database (so they have entity IDs and can be put in a deck code) but have no gameplay data yet. They ship as partial. sync-data fails if a listed card gains data (remove it here) or an unlisted card lacks it.",
+  "noGameplay": ["P-A-101","P-A-102","P-A-103","P-A-104","P-A-105","P-A-106","P-A-107","P-A-108","P-A-109","P-A-110","P-A-111","P-A-112","P-A-113","P-A-114","P-A-115","P-A-116","P-A-117"]
+}
