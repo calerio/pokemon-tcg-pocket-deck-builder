@@ -3,7 +3,7 @@
 All notable changes are listed here. The format follows [Keep a Changelog](https://keepachangelog.com/),
 and the project uses [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [1.0.0] - 2026-09-23
 ### Added
 - One-workspace deck builder: instant search (Enter adds the top result), inline `− n +` steppers,
   evolution-line grouping, manual reordering, always-visible energy picker with suggestions, one next-step

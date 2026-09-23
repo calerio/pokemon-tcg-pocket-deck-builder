@@ -1,7 +1,7 @@
 {
   "name": "pokemon-tcg-pocket-deck-builder",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Pocket Deck Lab: Pok\u00e9mon TCG Pocket Deck Builder & QR Generator. Build decks visually and make in-game deck-share QR codes, privately in your browser.",
   "license": "MIT",
   "type": "module",

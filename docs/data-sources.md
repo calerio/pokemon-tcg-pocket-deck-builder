@@ -32,11 +32,11 @@ flibustier uses `PROMO-A`/`PROMO-B`, and TCGdex and the game use `P-A`/`P-B`. Th
 - Four B2a records (126–129) are missing their " ex" suffix in the gameplay source. This is fixed by the
   reviewed `data/overrides.json`.
 
-## Open questions (resolve before publishing)
-1. **Limitless-sourced gameplay text.** Card text is © TPC. Limitless compiled it and states no reuse
-   licence. Options: (a) ship it with attribution, the common practice for fan deck builders;
-   (b) ship only identity data (name, set, rarity, entity) for those sets until TCGdex covers them;
-   (c) ask Limitless. **Owner decision.**
+## Decisions and open questions
+1. **Limitless-sourced gameplay text. Decided 2026-09-23 (owner): ship it, with attribution.** Card text is
+   © TPC, and Limitless compiled it without stating a reuse licence. That's common practice for fan deck
+   builders, and it can be removed if Limitless objects. It will be replaced by TCGdex data as TCGdex covers
+   those sets.
 2. **Hotlinking the exchange repo via jsDelivr.** It is technically allowed (CORS `*`, public CDN). Keep
    the adapter in `src/lib/cards/images.ts` so the host can be swapped in one place.
 
