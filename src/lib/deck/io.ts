@@ -2,7 +2,7 @@
  * Deck import/export: our JSON, tcgp-deck-qr JSON, plain text / Limitless "Copy" text, and raw deck codes.
  * Import never guesses. Unknown or ambiguous lines are reported and the rest of the deck still loads.
  */
-import { z } from "zod";
+import * as z from "zod/mini";
 import type { Catalog, EntityKey } from "../cards/catalog.ts";
 import { entityKey } from "../cards/catalog.ts";
 import { nameKey } from "../cards/normalize.ts";
@@ -23,19 +23,27 @@ export interface ImportResult {
 }
 
 // ---------- our JSON ----------
+const count = z.int().check(z.minimum(1), z.maximum(4));
 const ourJson = z.object({
   format: z.literal("pocket-deck-lab"),
   version: z.literal(1),
-  name: z.string().max(80),
-  energy: z.array(z.enum(ENERGY_TYPES)).max(3),
-  cards: z.array(z.object({ id: z.string(), name: z.string().optional(), count: z.number().int().min(1).max(4) })).max(40),
+  name: z.string().check(z.maxLength(80)),
+  energy: z.array(z.enum(ENERGY_TYPES)).check(z.maxLength(3)),
+  cards: z.array(z.object({ id: z.string(), name: z.optional(z.string()), count })).check(z.maxLength(40)),
 });
 
+const theirCard = z.object({
+  name: z.optional(z.string()),
+  set: z.optional(z.string()),
+  number: z.optional(z.union([z.number(), z.string()])),
+  id: z.optional(z.number()),
+  count: z.optional(count),
+});
 const theirJson = z.object({
-  name: z.string().optional(),
-  pokemon: z.array(z.object({ name: z.string().optional(), set: z.string().optional(), number: z.union([z.number(), z.string()]).optional(), id: z.number().optional(), count: z.number().int().min(1).max(4).optional() })),
-  trainers: z.array(z.object({ name: z.string().optional(), set: z.string().optional(), number: z.union([z.number(), z.string()]).optional(), id: z.number().optional(), count: z.number().int().min(1).max(4).optional() })),
-  energy: z.array(z.string()).max(3),
+  name: z.optional(z.string()),
+  pokemon: z.array(theirCard),
+  trainers: z.array(theirCard),
+  energy: z.array(z.string()).check(z.maxLength(3)),
 });
 
 export function exportJson(d: Deck, catalog: Catalog): string {
@@ -91,7 +99,7 @@ export function importDeck(input: string, catalog: Catalog, fallbackName = "Impo
     const theirs = theirJson.safeParse(data);
     if (theirs.success) {
       const b = new Builder(catalog, theirs.data.name || fallbackName);
-      const add = (kind: "pokemon" | "trainer", c: z.infer<typeof theirJson>["pokemon"][number], i: number) => {
+      const add = (kind: "pokemon" | "trainer", c: z.infer<typeof theirCard>, i: number) => {
         const count = c.count ?? 1;
         if (c.id !== undefined) b.addKey(entityKey({ kind, id: c.id }), count, i, String(c.id));
         else if (c.set && c.number !== undefined) b.addById(`${c.set} ${c.number}`, count, i, c.name);

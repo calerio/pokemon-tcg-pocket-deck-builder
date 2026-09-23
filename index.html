@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Pocket Deck Lab: Pokémon TCG Pocket Deck Builder &amp; QR Generator</title>
+    <meta name="description" content="Build a Pokémon TCG Pocket deck in seconds: search, tap cards, pick energy, and get a QR code the game can scan. Free, private and runs in your browser." />
+    <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#151922" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://assets.tcgdex.net" crossorigin />
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript><p style="padding:16px">Pocket Deck Lab needs JavaScript to build decks and make QR codes.</p></noscript>
+
+    <!-- Crawlable, human-useful copy lives BELOW the workspace so the app opens straight into the builder. -->
+    <article class="about" id="about">
+      <h2>Pokémon TCG Pocket Deck Builder &amp; QR Generator</h2>
+      <p>Pocket Deck Lab turns a decklist into the QR code that Pokémon TCG Pocket reads. Search for a card, tap to add it,
+        pick your energy, and press <b>Generate QR</b>. Then, in the game, open <b>My Decks → Build New → Scan Code</b> and point
+        your phone at the code, or scan a saved image.</p>
+      <h2>Private by design</h2>
+      <p>Everything runs in your browser. Your decks are saved on this device only, screenshots you import are read locally,
+        and nothing is uploaded. There are no accounts and no tracking.</p>
+      <h2>How the deck code works</h2>
+      <p>A deck code stores each card's in-game ID and your energy types. It doesn't store the artwork or rarity. The format was
+        reverse-engineered and documented by Kevin Gutowski in
+        <a href="https://github.com/KevinGutowski/tcgp-deck-qr">tcgp-deck-qr</a>; Pocket Deck Lab is an independent
+        implementation. Card identities come from
+        <a href="https://github.com/flibustier/pokemon-tcg-pocket-database">flibustier/pokemon-tcg-pocket-database</a>, and card
+        details from <a href="https://tcgdex.dev">TCGdex</a> and the <a href="https://pocket.limitlesstcg.com/cards">Limitless</a>
+        card database.</p>
+      <p class="fine">Pocket Deck Lab is an unofficial fan project. It is not affiliated with, endorsed, sponsored or approved by The Pokémon
+        Company, Nintendo, Creatures Inc., GAME FREAK inc. or DeNA Co., Ltd. Pokémon and card images, names and text are © their
+        respective owners. Card images load directly from community sources and are not hosted here.</p>
+    </article>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

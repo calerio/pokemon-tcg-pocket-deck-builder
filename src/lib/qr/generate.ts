@@ -41,7 +41,7 @@ export function deckQrSvg(payload: string, { title = "Deck QR code" }: { title?:
  * Rasterise a matrix to RGBA pixels at an integer module size (never fractional, so edges stay sharp).
  * Returns the pixel buffer plus its side length. Used by exports and tests.
  */
-export function rasterise(matrix: QrMatrix, moduleSize: number, quiet = QUIET_ZONE): { data: Uint8ClampedArray; side: number } {
+export function rasterise(matrix: QrMatrix, moduleSize: number, quiet = QUIET_ZONE): { data: Uint8ClampedArray<ArrayBuffer>; side: number } {
   if (!Number.isInteger(moduleSize) || moduleSize < 1) throw new Error("module size must be a positive integer");
   const side = (matrix.length + quiet * 2) * moduleSize;
   const data = new Uint8ClampedArray(side * side * 4).fill(255);

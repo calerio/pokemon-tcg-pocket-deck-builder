@@ -2,7 +2,7 @@
  * Versioned local persistence. Everything stays in this browser's localStorage. The stored envelope
  * carries a version, and `migrate` upgrades older envelopes step by step (add a step per version).
  */
-import { z } from "zod";
+import * as z from "zod/mini";
 import { ENERGY_TYPES } from "../codec/energy.ts";
 import type { Deck } from "./model.ts";
 import { emptyDeck } from "./model.ts";
@@ -10,16 +10,23 @@ import { emptyDeck } from "./model.ts";
 export const STORAGE_KEY = "pdl:v1";
 export const STORAGE_VERSION = 1;
 
+// zod/mini keeps the bundle small; checks are applied with .check(...)
 const deckSchema = z.object({
-  name: z.string().max(80),
-  cards: z.array(z.object({ key: z.string().regex(/^(pokemon|trainer):\d+$/), count: z.number().int().min(1).max(4), printId: z.string().optional() })).max(40),
-  energy: z.array(z.enum(ENERGY_TYPES)).max(3),
+  name: z.string().check(z.maxLength(80)),
+  cards: z.array(
+    z.object({
+      key: z.string().check(z.regex(/^(pokemon|trainer):\d+$/)),
+      count: z.int().check(z.minimum(1), z.maximum(4)),
+      printId: z.optional(z.string()),
+    }),
+  ).check(z.maxLength(40)),
+  energy: z.array(z.enum(ENERGY_TYPES)).check(z.maxLength(3)),
 });
 
 const envelopeSchema = z.object({
   version: z.literal(STORAGE_VERSION),
   draft: deckSchema,
-  saved: z.array(deckSchema.extend({ savedAt: z.string() })).max(50).default([]),
+  saved: z._default(z.array(z.extend(deckSchema, { savedAt: z.string() })).check(z.maxLength(50)), []),
 });
 
 export type SavedDeck = Deck & { savedAt: string };

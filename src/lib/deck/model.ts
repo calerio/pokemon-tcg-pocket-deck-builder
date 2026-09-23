@@ -133,11 +133,16 @@ export function groupDeck(d: Deck, catalog: Catalog): DeckGroup[] {
     lines.set(root, [...(lines.get(root) ?? []), r]);
   }
   const groups: DeckGroup[] = [];
+  const singles: typeof pokemon = [];
   for (const [root, members] of lines) {
+    if (members.length === 1) {
+      singles.push(members[0]!); // lone Pokémon share one calm group instead of a heading each
+      continue;
+    }
     members.sort((a, b) => stageRank(a.entity.stage) - stageRank(b.entity.stage));
-    const first = members[0]!.entity.name;
-    groups.push({ id: `line:${root}`, label: members.length > 1 ? `${first} line` : first, cards: members });
+    groups.push({ id: `line:${root}`, label: `${members[0]!.entity.name} line`, cards: members });
   }
+  if (singles.length) groups.push({ id: "line:*", label: groups.length ? "Other Pokémon" : "Pokémon", cards: singles });
   const tGroups = new Map<string, typeof trainers>();
   for (const r of trainers) {
     const t = r.entity.trainerType ?? "Trainer";
