@@ -5,12 +5,12 @@
   --card: #ffffff;
   --ink: #1d2433;
   --ink-2: #4a5468;
-  --ink-3: #6b7486;
+  --ink-3: #5a6272; /* ≥4.5:1 on --paper and --paper-2 (WCAG AA) */
   --line: #e2dccf;
   --accent: #2f5bea;
   --accent-ink: #ffffff;
   --accent-soft: #e6ecff;
-  --good: #1f7a4d;
+  --good: #17663f; /* ≥4.5:1 on --paper-2 */
   --good-soft: #e3f4ea;
   --warn: #9a5b00;
   --warn-soft: #fff1d6;

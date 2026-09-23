@@ -38,10 +38,12 @@ export function Catalogue({ catalog, store, searchRef }: { catalog: Catalog; sto
   const nFilters = activeFilterCount(filters);
 
   const onSearchKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    // Enter adds the top result: search → Enter is the fastest possible "add a known card"
-    if (e.key === "Enter" && hits[0]) {
+    // Enter adds the top result: search → Enter is the fastest possible "add a known card".
+    // Use the query as typed right now, not the deferred results (they can lag a keystroke behind).
+    if (e.key === "Enter") {
       e.preventDefault();
-      store.add(hits[0].key, hits[0].print.cardId);
+      const top = index.search(query, filters, 1)[0];
+      if (top) store.add(top.key, top.print.cardId);
     }
     if (e.key === "Escape") setQuery("");
   };

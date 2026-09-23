@@ -51,13 +51,25 @@ export function useDeck(catalog: Catalog | null) {
   const [bump, setBump] = useState(0); // increments on add → animates the counter
   const noticeId = useRef(0);
 
-  // Autosave continuously (debounced a little so typing a name doesn't write on every key).
+  // Autosave continuously (debounced a little so typing a name doesn't write on every key),
+  // and flush immediately when the page is hidden or closed so nothing is ever lost.
   useEffect(() => {
-    const t = setTimeout(() => {
+    const write = () => {
       envRef.current = { ...(envRef.current ?? load(storage())), draft: deck };
       save(storage(), envRef.current);
-    }, 250);
-    return () => clearTimeout(t);
+    };
+    const t = setTimeout(write, 250);
+    const flush = () => {
+      clearTimeout(t);
+      write();
+    };
+    window.addEventListener("pagehide", flush);
+    document.addEventListener("visibilitychange", flush);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("pagehide", flush);
+      document.removeEventListener("visibilitychange", flush);
+    };
   }, [deck]);
 
   const notify = useCallback((text: string, undoable: boolean, tone: Notice["tone"] = "info") => {
