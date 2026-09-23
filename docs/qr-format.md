@@ -2,8 +2,7 @@
 
 > **Credit:** this format was reverse-engineered and documented by **Kevin Gutowski** in
 > [tcgp-deck-qr](https://github.com/KevinGutowski/tcgp-deck-qr) (MIT). Pocket Deck Lab's codec
-> (`src/lib/codec/`) is an independent implementation written from his documentation. We did not
-> discover the format.
+> (`src/lib/codec/`) is a separate implementation written from his documentation.
 
 In the game, **My Decks → ⋯ → Display Code** shows a deck's code, and **My Decks → Build New → Scan Code**
 imports one. The QR symbol contains a plain Base64 string.
@@ -54,10 +53,10 @@ emits a conventional square-module version-9 H symbol with a 4-module quiet zone
 
 ## Verification
 - `tests/fixtures/payloads.json` holds the tcgp-deck-qr reference payload and the prototype payload for a Mega
-  Lucario ex deck, which **imported correctly in the real game on an iPhone on 2026-09-23**. It also holds
-  eleven more tournament decklists encoded by the original prototype as an oracle. Every one must decode and
-  re-encode byte for byte (`tests/codec.test.ts`).
+  Lucario ex deck, which imported correctly in the game on an iPhone on 2026-09-23. It also holds
+  eleven tournament decklists encoded by the earlier prototype. Every one must decode and re-encode byte for
+  byte (`tests/codec.test.ts`).
 - On 2026-09-23 the plain QR, all three QR-card themes, the social size, and a code with three energies
-  (Fighting, Metal, Water) were all scanned into the real game on an iPhone. Lightning is verified via the
+  (Fighting, Metal, Water) were scanned into the game on an iPhone. Lightning is verified via the
   tcgp-deck-qr reference. Grass, Fire, Psychic and Darkness haven't been scanned in-game yet, but they use
   the same documented byte values.

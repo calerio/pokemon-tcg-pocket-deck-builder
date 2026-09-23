@@ -9,8 +9,8 @@ from the community sources listed below, and the app still works text-only when 
 ## Deck-code format research
 **[KevinGutowski/tcgp-deck-qr](https://github.com/KevinGutowski/tcgp-deck-qr)**: MIT License,
 Copyright (c) 2026 Kevin Gutowski.
-Kevin reverse-engineered the deck-share payload and documented it. Our codec is an independent
-implementation written from that documentation. The screenshot-recovery routine in
+Kevin reverse-engineered and documented the deck-share payload. Our codec is a separate implementation
+written from that documentation. The screenshot-recovery routine in
 `src/lib/qr/recover.ts` is adapted from `src/qr.js` in that project. Its MIT notice:
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy of this software and

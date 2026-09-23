@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// WebKit only (owner preference; Safari is the target browser) and one worker: the dev machine has 8 GB RAM.
+// WebKit only (Safari is the main target) and a single worker to keep memory use low.
 export default defineConfig({
   testDir: "tests/e2e",
   workers: 1,

@@ -1,12 +1,12 @@
-# RFC: an honest path to deck-vs-deck simulation
+# RFC: deck-vs-deck simulation
 
-**Status:** draft. **Nothing described here exists yet.** The app makes no win-rate claims.
+Status: draft. None of this exists yet, and the app makes no win-rate claims.
 
 ## Why this is hard
 Card text alone can't drive a simulator. Every attack, ability and trainer effect needs a precise, tested
 implementation, and the core rules need them too: turn structure, energy zone, retreat, status conditions,
-points and prize logic, and bench limits. One mis-implemented effect makes every matchup number wrong
-while it still *looks* authoritative.
+points and prize logic, and bench limits. One wrong effect makes every matchup number involving that card wrong, and
+nothing in the output would show it.
 
 ## Plan (in order; each step ships only when its tests pass)
 1. **Deterministic engine:** a headless TypeScript game state with seeded RNG, validated actions, an event log,
@@ -20,7 +20,7 @@ while it still *looks* authoritative.
 6. **Stronger search** (e.g. MCTS), only when benchmarked against fixed scenarios and baseline agents.
 7. **"Play against the bot"**, only when the engine can enforce every action for the supported pool.
 
-## Rules for honesty
+## Reporting rules
 - No win-rate for a deck unless **every** card in both decks is supported.
 - Every number shows its sample size and uncertainty, and the UI labels the whole feature *experimental*.
 - Local and reproducible: the same seed and decks give the same result. No live accounts, no scraping,

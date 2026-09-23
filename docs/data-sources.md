@@ -1,6 +1,6 @@
 # Data sources and licence audit
 
-The audit was done 2026-09-23. Re-check it before every public release.
+Last checked 2026-09-23. Re-check before each release.
 
 ## What each source provides
 
@@ -33,14 +33,13 @@ flibustier uses `PROMO-A`/`PROMO-B`, and TCGdex and the game use `P-A`/`P-B`. Th
   reviewed `data/overrides.json`.
 
 ## Decisions and open questions
-1. **Limitless-sourced gameplay text. Decided 2026-09-23 (owner): ship it, with attribution.** Card text is
-   © TPC, and Limitless compiled it without stating a reuse licence. That's common practice for fan deck
-   builders, and it can be removed if Limitless objects. It will be replaced by TCGdex data as TCGdex covers
-   those sets.
+1. **Limitless-sourced gameplay text (decided 2026-09-23): ship it, with attribution.** Card text is © TPC,
+   and Limitless compiled it without stating a reuse licence. Fan deck builders commonly do the same. It
+   will be removed if Limitless objects, and replaced by TCGdex data as TCGdex covers those sets.
 2. **Hotlinking the exchange repo via jsDelivr.** It is technically allowed (CORS `*`, public CDN). Keep
    the adapter in `src/lib/cards/images.ts` so the host can be swapped in one place.
 
 ## Refreshing
-Run `npm run sync-data`. It rebuilds `public/data/cards.v1.json` and `meta.json`, and fails loudly on
-ambiguity or on regressions. The scheduled `sync-data.yml` workflow opens a PR with the diff and
+Run `npm run sync-data`. It rebuilds `public/data/cards.v1.json` and `meta.json`, and stops with an error on
+ambiguity or regressions. The scheduled `sync-data.yml` workflow opens a PR with the diff and
 never deploys directly.

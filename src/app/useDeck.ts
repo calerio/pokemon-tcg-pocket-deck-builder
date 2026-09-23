@@ -1,4 +1,4 @@
-/** Deck state for the app: undo/redo history, continuous autosave, and friendly change feedback. */
+/** Deck state for the app: undo/redo history, autosave, and toast messages for changes. */
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 import type { Catalog, EntityKey } from "../lib/cards/catalog.ts";
 import type { EnergyType } from "../lib/codec/energy.ts";
@@ -52,7 +52,7 @@ export function useDeck(catalog: Catalog | null) {
   const noticeId = useRef(0);
 
   // Autosave continuously (debounced a little so typing a name doesn't write on every key),
-  // and flush immediately when the page is hidden or closed so nothing is ever lost.
+  // and flush immediately when the page is hidden or closed so the last change isn't lost.
   useEffect(() => {
     const write = () => {
       envRef.current = { ...(envRef.current ?? load(storage())), draft: deck };

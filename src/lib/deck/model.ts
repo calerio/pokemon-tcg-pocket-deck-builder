@@ -136,7 +136,7 @@ export function groupDeck(d: Deck, catalog: Catalog): DeckGroup[] {
   const singles: typeof pokemon = [];
   for (const [root, members] of lines) {
     if (members.length === 1) {
-      singles.push(members[0]!); // lone Pokémon share one calm group instead of a heading each
+      singles.push(members[0]!); // lone Pokémon share one group instead of a heading each
       continue;
     }
     members.sort((a, b) => stageRank(a.entity.stage) - stageRank(b.entity.stage));

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <title>Pocket Deck Lab: Pokémon TCG Pocket Deck Builder &amp; QR Generator</title>
-    <meta name="description" content="Build a Pokémon TCG Pocket deck in seconds: search, tap cards, pick energy, and get a QR code the game can scan. Free, private and runs in your browser." />
+    <meta name="description" content="Build a Pokémon TCG Pocket deck and get a QR code the game can scan. Search, tap cards, pick energy. Free, and it runs in your browser." />
     <meta name="theme-color" content="#f7f4ee" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#151922" media="(prefers-color-scheme: dark)" />
     <link rel="canonical" href="https://calerio.github.io/pokemon-tcg-pocket-deck-builder/" />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Pocket Deck Lab" />
     <meta property="og:title" content="Pocket Deck Lab: Pokémon TCG Pocket Deck Builder &amp; QR Generator" />
-    <meta property="og:description" content="Search, tap cards, pick energy, and get a QR code Pokémon TCG Pocket can scan. Free and private: it runs in your browser." />
+    <meta property="og:description" content="Build a deck and get a QR code Pokémon TCG Pocket can scan. Free, and it runs in your browser." />
     <meta property="og:url" content="https://calerio.github.io/pokemon-tcg-pocket-deck-builder/" />
     <meta property="og:image" content="https://calerio.github.io/pokemon-tcg-pocket-deck-builder/og.png" />
     <meta property="og:image:width" content="1200" />
@@ -36,7 +36,7 @@
         "browserRequirements": "Requires JavaScript",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "description": "A free, private deck builder for Pokémon TCG Pocket that generates the in-game deck-share QR code."
+        "description": "A free deck builder for Pokémon TCG Pocket that makes the in-game deck-share QR code."
       }
     </script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -46,20 +46,20 @@
     <div id="root"></div>
     <noscript><p style="padding:16px">Pocket Deck Lab needs JavaScript to build decks and make QR codes.</p></noscript>
 
-    <!-- Crawlable, human-useful copy lives BELOW the workspace so the app opens straight into the builder. -->
+    <!-- Static copy for crawlers and no-JS visitors; it sits below the app so the builder loads first. -->
     <article class="about" id="about">
       <h2>Pokémon TCG Pocket Deck Builder &amp; QR Generator</h2>
       <p>Pocket Deck Lab turns a decklist into the QR code that Pokémon TCG Pocket reads. Search for a card, tap to add it,
         pick your energy, and press <b>Generate QR</b>. Then, in the game, open <b>My Decks → Build New → Scan Code</b> and point
         your phone at the code, or scan a saved image.</p>
-      <h2>Private by design</h2>
-      <p>Everything runs in your browser. Your decks are saved on this device only, screenshots you import are read locally,
-        and nothing is uploaded. There are no accounts and no tracking.</p>
+      <h2>Privacy</h2>
+      <p>Everything runs in your browser. Decks are saved on this device, imported screenshots are read locally, and nothing
+        is uploaded. There are no accounts and no tracking.</p>
       <h2>How the deck code works</h2>
       <p>A deck code stores each card's in-game ID and your energy types. It doesn't store the artwork or rarity. The format was
         reverse-engineered and documented by Kevin Gutowski in
-        <a href="https://github.com/KevinGutowski/tcgp-deck-qr">tcgp-deck-qr</a>; Pocket Deck Lab is an independent
-        implementation. Card identities come from
+        <a href="https://github.com/KevinGutowski/tcgp-deck-qr">tcgp-deck-qr</a>; Pocket Deck Lab is a separate
+        implementation of it. Card identities come from
         <a href="https://github.com/flibustier/pokemon-tcg-pocket-database">flibustier/pokemon-tcg-pocket-database</a>, and card
         details from <a href="https://tcgdex.dev">TCGdex</a> and the <a href="https://pocket.limitlesstcg.com/cards">Limitless</a>
         card database.</p>

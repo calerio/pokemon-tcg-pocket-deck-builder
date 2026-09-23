@@ -14,7 +14,7 @@ export default defineConfig({
     environment: "happy-dom",
     include: ["tests/**/*.test.ts", "tests/**/*.test.tsx"],
     exclude: ["tests/e2e/**", "node_modules/**"],
-    // 8 GB machine: one worker process only.
+    // One worker process at a time, to keep memory use low.
     pool: "forks",
     maxWorkers: 1,
     fileParallelism: false,
