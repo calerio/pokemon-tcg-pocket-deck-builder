@@ -1,0 +1,418 @@
+{
+ "reference_tcgp_deck_qr": {
+  "source": "KevinGutowski/tcgp-deck-qr examples/miraidon-magnezone.png",
+  "payload": "C5iWqJiWqJicApiaXpiXwJiaaJiahpiXKpiWnpiWnpiXogkAM+oAM+oAA9QAA9QAM/4AR6QAR6QAHPIAHPIBBA==",
+  "trainers": [
+   40,
+   40,
+   1410,
+   990,
+   320,
+   1000,
+   1030,
+   170,
+   30,
+   30,
+   290
+  ],
+  "pokemon": [
+   13290,
+   13290,
+   980,
+   980,
+   13310,
+   18340,
+   18340,
+   7410,
+   7410
+  ],
+  "energy": [
+   4
+  ]
+ },
+ "oracle_butterfree_mega_sceptile_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Butterfree / Mega Sceptile ex",
+  "trainers": [
+   40,
+   40,
+   110,
+   990,
+   170,
+   320,
+   1020,
+   1020,
+   510,
+   1340,
+   1340
+  ],
+  "pokemon": [
+   19040,
+   19040,
+   19050,
+   19050,
+   19060,
+   19060,
+   16700,
+   16710,
+   16730
+  ],
+  "energy": [
+   1
+  ],
+  "payload": "C5iWqJiWqJiW7piaXpiXKpiXwJiafJiafJiYfpibvJibvAkASmAASmAASmoASmoASnQASnQAQTwAQUYAQVoBAQ=="
+ },
+ "oracle_hydreigon_mega_absol_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Hydreigon / Mega Absol ex",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   320,
+   170,
+   30,
+   30,
+   480,
+   480,
+   1060,
+   1060,
+   1520,
+   1520
+  ],
+  "pokemon": [
+   12370,
+   12370,
+   12390,
+   12390,
+   17800,
+   12330
+  ],
+  "energy": [
+   7
+  ],
+  "payload": "DpiWqJiWqJiaXpiaXpiXwJiXKpiWnpiWnpiYYJiYYJiapJiapJiccJiccAYAMFIAMFIAMGYAMGYARYgAMCoBBw=="
+ },
+ "oracle_magnezone_miraidon_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Magnezone / Miraidon ex (Oricorio)",
+  "trainers": [
+   40,
+   40,
+   1410,
+   1000,
+   320,
+   990,
+   1030,
+   430,
+   30,
+   30,
+   1060
+  ],
+  "pokemon": [
+   13290,
+   13290,
+   980,
+   980,
+   13310,
+   13310,
+   6470,
+   6470,
+   18340
+  ],
+  "energy": [
+   4
+  ],
+  "payload": "C5iWqJiWqJicApiaaJiXwJiaXpiahpiYLpiWnpiWnpiapAkAM+oAM+oAA9QAA9QAM/4AM/4AGUYAGUYAR6QBBA=="
+ },
+ "oracle_mega_altaria_ex_espeon": {
+  "source": "python prototype deck_qr.py",
+  "name": "Mega Altaria ex / Espeon (Darkrai sleep)",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   170,
+   320,
+   30,
+   30,
+   1430,
+   1140
+  ],
+  "pokemon": [
+   12660,
+   12660,
+   18350,
+   18350,
+   12780,
+   12780,
+   11840,
+   16440,
+   16440,
+   10740
+  ],
+  "energy": [
+   5
+  ],
+  "payload": "CpiWqJiWqJiaXpiaXpiXKpiXwJiWnpiWnpicFpia9AoAMXQAMXQAR64AR64AMewAMewALkAAQDgAQDgAKfQBBQ=="
+ },
+ "oracle_mega_blaziken_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Mega Blaziken ex",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   320,
+   910,
+   910,
+   480,
+   480,
+   30,
+   30,
+   1280,
+   300,
+   1270
+  ],
+  "pokemon": [
+   11150,
+   11150,
+   11180,
+   11180,
+   11260,
+   16890
+  ],
+  "energy": [
+   2
+  ],
+  "payload": "DpiWqJiWqJiaXpiaXpiXwJiaDpiaDpiYYJiYYJiWnpiWnpibgJiXrJibdgYAK44AK44AK6wAK6wAK/wAQfoBAg=="
+ },
+ "oracle_mega_lucario_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Mega Lucario ex / Lucario",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   320,
+   1300,
+   430,
+   30,
+   30,
+   20,
+   1280,
+   1060,
+   1350
+  ],
+  "pokemon": [
+   3720,
+   3720,
+   17460,
+   17460,
+   3730,
+   1540,
+   17430
+  ],
+  "energy": [
+   6
+  ],
+  "payload": "DZiWqJiWqJiaXpiaXpiXwJiblJiYLpiWnpiWnpiWlJibgJiapJibxgcADogADogARDQARDQADpIABgQARBYBBg=="
+ },
+ "oracle_mega_manectric_ex_heliolisk": {
+  "source": "python prototype deck_qr.py",
+  "name": "Mega Manectric ex / Heliolisk",
+  "trainers": [
+   1030,
+   1030,
+   40,
+   40,
+   990,
+   320,
+   1010,
+   1010,
+   30,
+   30,
+   1280,
+   1440,
+   1140
+  ],
+  "pokemon": [
+   13330,
+   13330,
+   20220,
+   20220,
+   16310,
+   16320,
+   16320
+  ],
+  "energy": [
+   4
+  ],
+  "payload": "DZiahpiahpiWqJiWqJiaXpiXwJiacpiacpiWnpiWnpibgJicIJia9AcANBIANBIATvwATvwAP7YAP8AAP8ABBA=="
+ },
+ "oracle_mega_rayquaza_ex_dragonair": {
+  "source": "python prototype deck_qr.py",
+  "name": "Mega Rayquaza ex / Dragonair (Gouging Fire)",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   320,
+   430,
+   1400,
+   30,
+   30,
+   1370,
+   1430,
+   1590,
+   1590
+  ],
+  "pokemon": [
+   8430,
+   8430,
+   20780,
+   20780,
+   18690,
+   18690,
+   20810
+  ],
+  "energy": [
+   2,
+   4
+  ],
+  "payload": "DZiWqJiWqJiaXpiaXpiXwJiYLpib+JiWnpiWnpib2picFpictpictgcAIO4AIO4AUSwAUSwASQIASQIAUUoCAgQ="
+ },
+ "oracle_suicune_ex_baxcalibur": {
+  "source": "python prototype deck_qr.py",
+  "name": "Suicune ex / Baxcalibur (Chien-Pao ex)",
+  "trainers": [
+   40,
+   40,
+   990,
+   370,
+   430,
+   480,
+   480,
+   30,
+   30,
+   290,
+   290,
+   820,
+   1580
+  ],
+  "pokemon": [
+   15430,
+   15430,
+   15450,
+   15450,
+   10400,
+   10400,
+   15460
+  ],
+  "energy": [
+   3
+  ],
+  "payload": "DZiWqJiWqJiaXpiX8piYLpiYYJiYYJiWnpiWnpiXopiXopiZtJicrAcAPEYAPEYAPFoAPFoAKKAAKKAAPGQBAw=="
+ },
+ "oracle_team_rockets_weezing_ex_hoopa_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Team Rocket's Weezing ex / Hoopa ex",
+  "trainers": [
+   40,
+   40,
+   320,
+   320,
+   990,
+   430,
+   30,
+   30,
+   1060,
+   20,
+   1280,
+   1520,
+   1520
+  ],
+  "pokemon": [
+   21550,
+   21550,
+   21560,
+   21560,
+   20640,
+   20640,
+   19390
+  ],
+  "energy": [
+   7
+  ],
+  "payload": "DZiWqJiWqJiXwJiXwJiaXpiYLpiWnpiWnpiapJiWlJibgJiccJiccAcAVC4AVC4AVDgAVDgAUKAAUKAAS74BBw=="
+ },
+ "oracle_vespiquen_ex_shuckle_ex": {
+  "source": "python prototype deck_qr.py",
+  "name": "Vespiquen ex / Shuckle ex",
+  "trainers": [
+   40,
+   40,
+   990,
+   990,
+   170,
+   320,
+   20,
+   1280,
+   510,
+   510,
+   1340,
+   1340
+  ],
+  "pokemon": [
+   19710,
+   19710,
+   19720,
+   19720,
+   2990,
+   8770,
+   8770,
+   13830
+  ],
+  "energy": [
+   1
+  ],
+  "payload": "DJiWqJiWqJiaXpiaXpiXKpiXwJiWlJibgJiYfpiYfpibvJibvAgATP4ATP4ATQgATQgAC64AIkIAIkIANgYBAQ=="
+ },
+ "ingame_verified_mega_lucario_ex": {
+  "source": "python prototype deck_qr.py \u2014 imported in the real game on iPhone, 2026-09-23",
+  "name": "Mega Lucario ex",
+  "trainers": [
+   40,
+   40,
+   990,
+   420,
+   320,
+   1300,
+   430,
+   30,
+   30,
+   20,
+   1280,
+   10,
+   1350
+  ],
+  "pokemon": [
+   3720,
+   3720,
+   17460,
+   17460,
+   3730,
+   1540,
+   2600
+  ],
+  "energy": [
+   6
+  ],
+  "payload": "DZiWqJiWqJiaXpiYJJiXwJiblJiYLpiWnpiWnpiWlJibgJiWipibxgcADogADogARDQARDQADpIABgQACigBBg=="
+ }
+}
