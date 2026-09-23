@@ -14,8 +14,8 @@ Build a deck in seconds and get the QR code Pokémon TCG Pocket can scan, privat
   result has a `− n +` stepper, so you never open a modal to add a card.
 - **Always know what's next.** An `n/20` counter and one message: *Add 4 more cards*, *Choose an energy*
   or *Ready to generate*. The 2-copies-per-name rule counts across different prints of a card.
-- **QR codes the game reads.** Codes use the same QR version and error correction as the game's own. The
-  sample deck's code **has been imported in the real game**.
+- **QR codes the game reads.** Codes use the same QR version and error correction as the game's own. Plain
+  codes and every QR-card design **have been scanned into the real game on iPhone**.
 - **Collectible QR cards.** Save a card-shaped image (Clean, Cute or Energy theme, plus a social-post size)
   with the scannable code as its artwork.
 - **Import anything.** Paste a Limitless decklist, a deck code or JSON, or scan or upload a screenshot of the
@@ -38,7 +38,8 @@ from community image hosts (TCGdex and jsDelivr).
 
 ## Support and limitations
 
-- **Tested with:** Safari/WebKit on macOS and iPhone-sized screens (automated), and in-game import on iPhone.
+- **Tested with:** Safari/WebKit on macOS and iPhone-sized screens (automated); in-game import on iPhone of the
+  plain QR, all QR-card themes and a 3-energy deck.
 - **Still to verify:** Android, and Chrome/Firefox by hand. Automated tests run in WebKit only.
 - **Deck codes carry cards and energy only.** Artwork, rarity, sleeves, covers and highlighted cards are
   chosen in the game.

@@ -57,5 +57,7 @@ emits a conventional square-module version-9 H symbol with a 4-module quiet zone
   Lucario ex deck, which **imported correctly in the real game on an iPhone on 2026-09-23**. It also holds
   eleven more tournament decklists encoded by the original prototype as an oracle. Every one must decode and
   re-encode byte for byte (`tests/codec.test.ts`).
-- Energies other than Fighting and Lightning have not been checked by an in-game scan yet. That's tracked in
-  the launch checklist.
+- On 2026-09-23 the plain QR, all three QR-card themes, the social size, and a code with three energies
+  (Fighting, Metal, Water) were all scanned into the real game on an iPhone. Lightning is verified via the
+  tcgp-deck-qr reference. Grass, Fire, Psychic and Darkness haven't been scanned in-game yet, but they use
+  the same documented byte values.
