@@ -2,7 +2,7 @@
   "name": "pokemon-tcg-pocket-deck-builder",
   "private": true,
   "version": "1.0.0",
-  "description": "Pocket Deck Lab: Pok\u00e9mon TCG Pocket Deck Builder & QR Generator. Build decks visually and make in-game deck-share QR codes, privately in your browser.",
+  "description": "Pocket Deck Lab: Pokémon TCG Pocket Deck Builder & QR Generator. Build decks visually and make in-game deck-share QR codes, privately in your browser.",
   "license": "MIT",
   "type": "module",
   "engines": {
@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.12.0",
     "happy-dom": "^20.14.5",
-    "pokemon-tcg-pocket-database": "2.10.0",
+    "pokemon-tcg-pocket-database": "2.13.1",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.70.1",
     "vite": "^8.3.0",

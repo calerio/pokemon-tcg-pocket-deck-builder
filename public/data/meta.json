@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-23T09:57:57.498Z",
+  "generatedAt": "2026-11-05T23:08:13.758Z",
   "counts": {
-    "sets": 23,
-    "entities": 2318,
-    "prints": 3879,
-    "partialEntities": 5
+    "sets": 27,
+    "entities": 2478,
+    "prints": 4577,
+    "partialEntities": 165
   },
   "sources": [
     {
       "name": "flibustier/pokemon-tcg-pocket-database",
       "url": "https://github.com/flibustier/pokemon-tcg-pocket-database",
       "licence": "MIT",
-      "version": "2.10.0",
-      "sha256": "a337cd3d2a2774871caa1de8d06fc64b3d03185ab5332917460f9a31dfea16d9",
+      "version": "2.13.1",
+      "sha256": "d4c2be3f9b474df68795eebc62974e8881b35c0ad8d614e9d82ed3ec6f1a73b5",
       "note": "identity, entity IDs, sets, packs, rarities"
     },
     {
